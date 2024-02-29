@@ -1,0 +1,9 @@
+---
+- name: My Simple Playbook
+  hosts: localhost
+  tasks:
+    - name: Use a Module from the community.general Collection
+      community.general.ping:
+    - name: Print a Debug Message
+      debug:
+        msg: "Hello from Ansible!"

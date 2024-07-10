@@ -1,4 +1,4 @@
 ---
 collections:
-    - name: vmware.vmware_rest
-      version: 3.0.0
+    - name: community.general
+      version: 9.1.0

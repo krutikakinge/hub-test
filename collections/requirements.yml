@@ -2,7 +2,7 @@
 collections:
     - name: community.general
     - name: community.aws
-    - name: community.asa
+  #  - name: community.asa
     - name: ansible.eda
     - name: ansible.galaxy_collection
     - name: ansible.posix

@@ -1,10 +1,17 @@
 ---
 collections:
     - name: community.general
+      version:  9.1.0
     - name: community.aws
+      version: 8.0.0
   #  - name: community.asa
-    - name: ansible.eda
-    - name: ansible.galaxy_collection
     - name: ansible.posix
+      version: 1.5.4
+    - name: ansible.eda
+      version: 1.4.7
+    - name: ansible.galaxy_collection
+      version: 1.0.13
     - name: ansible.receptor
-    - name: ansible.scm 
+      version: 2.0.3
+    - name: ansible.scm
+      version: 2.0.0

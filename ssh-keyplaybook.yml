@@ -74,4 +74,5 @@ IDBA==
     - name: "Create credentials - {{ controller_hostname }}"
       ansible.builtin.include_role:
         name: infra.controller_configuration.credentials
+      no_log: false
       when: controller_credentials is defined

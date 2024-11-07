@@ -1,0 +1,28 @@
+---
+- name: "Create AIP credentials on {{ controller_hostname }}"
+  hosts: localhost
+  gather_facts: false
+  vars:
+    controller_hostname: "controller.example.com"
+    ssh_username: "your_ssh_username"  # Define your SSH username here
+    ssh_private_key: "your_ssh_private_key"  # Define your SSH private key here if needed
+    controller_credentials:
+      - name: "AIP SSH Server key"
+        description: "SSH key to access AIP Server"
+        organization: "Default"
+        credential_type: "Machine"
+        state: "present"
+        inputs:
+          username: "{{ ssh_username }}"
+          ssh_key_data: "{{ ssh_private_key | default(omit) }}"
+
+  tasks:
+    - name: "Ensure controller_credentials variable is defined"
+      ansible.builtin.fail:
+        msg: "Variable controller_credentials is not defined"
+      when: controller_credentials is not defined
+
+    - name: "Create credentials - {{ controller_hostname }}"
+      ansible.builtin.include_role:
+        name: infra.controller_configuration.credentials
+      when: controller_credentials is defined

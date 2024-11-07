@@ -1,6 +1,6 @@
 ---
 - name: "Create AIP credentials on {{ controller_hostname }}"
-  hosts: localhost
+  hosts: all
   gather_facts: false
   vars:
     controller_hostname: "dhcp230-82.awxlab.pnq2.redhat.com"

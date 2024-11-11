@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: false
   vars:
-    controller_hostname: "dhcp230-82.awxlab.pnq2.redhat.com"
+    controller_hostname: "dhcp230-72.awxlab.pnq2.redhat.com"
     ssh_username: "root"  # Define your SSH username here
     ssh_private_key: "-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn

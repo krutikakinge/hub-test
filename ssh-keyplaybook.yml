@@ -68,12 +68,6 @@
           ssh_key_data: "{{ ssh_private_key | default(omit) }}"
 
   tasks:
-    - name: "Ensure controller_credentials variable is defined"
-      ansible.builtin.fail:
-        msg: "Variable controller_credentials is not defined"
-      no_log: false  
-      when: controller_credentials is not defined
-
     - name: "Create credentials - {{ controller_hostname }}"
       ansible.builtin.include_role:
         name: infra.controller_configuration.credentials

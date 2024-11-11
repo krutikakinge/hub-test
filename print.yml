@@ -1,11 +1,11 @@
 ---
-- name: Playbook to print a variable with a newline
+- name: Print variable with new line
   hosts: localhost
-  gather_facts: no
+  gather_facts: false
   vars:
     my_variable: "Hello, Ansible!"
-    
+
   tasks:
-    - name: Print the variable with a newline
-      debug:
-        msg: "{{ my_variable + '\n' }}"
+    - name: Print variable with a new line
+      ansible.builtin.debug:
+        msg: "{{ my_variable }}\n"

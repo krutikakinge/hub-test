@@ -2,6 +2,7 @@
 - name: "Create AIP credentials on {{ controller_hostname }}"
   hosts: all
   gather_facts: false
+  no_log: false
   vars:
     controller_hostname: "dhcp230-72.awxlab.pnq2.redhat.com"
     ssh_username: "root"  # Define your SSH username here

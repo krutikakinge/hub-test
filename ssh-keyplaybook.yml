@@ -6,57 +6,7 @@
   vars:
     controller_hostname: "dhcp230-72.awxlab.pnq2.redhat.com"
     ssh_username: "root"  # Define your SSH username here
-    ssh_private_key: |
-      -----BEGIN OPENSSH PRIVATE KEY-----
-      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
-      IDBA==
-      -----END OPENSSH PRIVATE KEY-----  
+    ssh_private_key: "{{ lookup('file', 'ssh_key') }}"
       
     controller_credentials:
       - name: "AIP SSH Server key"

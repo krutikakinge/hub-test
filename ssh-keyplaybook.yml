@@ -71,6 +71,7 @@
     - name: "Ensure controller_credentials variable is defined"
       ansible.builtin.fail:
         msg: "Variable controller_credentials is not defined"
+      no_log: false  
       when: controller_credentials is not defined
 
     - name: "Create credentials - {{ controller_hostname }}"

@@ -13,6 +13,7 @@
         organization: Default
         state: present
         credential_type: Machine
+        controller_host: https://dhcp230-13.awxlab.pnq2.redhat.com
         inputs:
           username: joe
           password: secret

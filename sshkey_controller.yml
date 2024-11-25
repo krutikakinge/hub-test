@@ -1,11 +1,20 @@
-- name: Create a valid MAchine credential from a private_key file
-  credential:
-    name: SCM Credential
-    organization: Default
-    state: present
-    credential_type: Machine
-    inputs:
-      username: root
-      password: redhat
-      ssh_key_data: "{{ lookup('file', '/tmp/id_rsa') }}"
-      #ssh_key_unlock: "passphrase"
+---
+- name: "Create AIP credentials on {{ controller_hostname }}"
+  hosts: all
+  gather_facts: false
+  no_log: false
+  vars:
+    controller_hostname: "dhcp230-13.awxlab.pnq2.redhat.com"
+
+  tasks:
+    - name: Create a valid SCM credential from a private_key file
+      credential:
+        name: SCM Credential
+        organization: Default
+        state: present
+        credential_type: Source Control
+        inputs:
+          username: joe
+          password: secret
+          ssh_key_data: "{{ lookup('file', '/tmp/id_rsa') }}"
+          #ssh_key_unlock: "passphrase"

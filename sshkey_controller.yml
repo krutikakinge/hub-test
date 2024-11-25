@@ -1,0 +1,11 @@
+- name: Create a valid MAchine credential from a private_key file
+  credential:
+    name: SCM Credential
+    organization: Default
+    state: present
+    credential_type: Machine
+    inputs:
+      username: root
+      password: redhat
+      ssh_key_data: "{{ lookup('file', '/tmp/id_rsa') }}"
+      #ssh_key_unlock: "passphrase"

@@ -5,6 +5,8 @@
   no_log: false
   vars:
     controller_host: https://dhcp230-13.awxlab.pnq2.redhat.com
+    controller_username: admin
+    controller_password: ansible
 
   tasks:
     - name: Create a valid SCM credential from a private_key file

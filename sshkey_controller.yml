@@ -8,7 +8,7 @@
 
   tasks:
     - name: Create a valid SCM credential from a private_key file
-      credential:
+      ansible.controller.credential:
         name: SCM Credential
         organization: Default
         state: present

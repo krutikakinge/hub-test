@@ -4,7 +4,7 @@
   gather_facts: false
   no_log: false
   vars:
-    controller_host: "dhcp230-13.awxlab.pnq2.redhat.com"
+    controller_host: https://dhcp230-13.awxlab.pnq2.redhat.com
 
   tasks:
     - name: Create a valid SCM credential from a private_key file
@@ -12,7 +12,7 @@
         name: SCM Credential
         organization: Default
         state: present
-        credential_type: Source Control
+        credential_type: Machine
         inputs:
           username: joe
           password: secret

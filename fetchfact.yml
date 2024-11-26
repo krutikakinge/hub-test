@@ -13,4 +13,4 @@
 
     - name: Display specific fact - Hostname
       debug:
-        msg: "The hostname is {{ ansible_facts['ansible_hostname'] }}"
+        msg: "The hostname is {{ ansible_facts['all_ipv4_addresses'] }}"

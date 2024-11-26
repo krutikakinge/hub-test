@@ -7,9 +7,9 @@
       debug:
         var: ansible_facts
 
-    - name: Display specific fact - OS Distribution
-      debug:
-        msg: "The OS distribution is {{ ansible_facts['ansible_distribution'] }}"
+    #- name: Display specific fact - OS Distribution
+     # debug:
+     #   msg: "The OS distribution is {{ ansible_facts['ansible_distribution'] }}"
 
     - name: Display specific fact - Hostname
       debug:

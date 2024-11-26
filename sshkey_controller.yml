@@ -9,7 +9,7 @@
   tasks:
     - name: Create a valid SCM credential from a private_key file
       ansible.controller.credential:
-        name: SCM Credential
+        name: Machine-key Credential
         organization: Default
         state: present
         credential_type: Machine
@@ -19,5 +19,5 @@
         inputs:
           #username: joe
           #password: secret
-          ssh_key_data: "{{ lookup('file', '/test/id_rsa') }}"
+          ssh_key_data: "{{ lookup('file', '/test/aap_ssh_key') }}"
           #ssh_key_unlock: "passphrase"

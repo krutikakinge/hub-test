@@ -4,6 +4,7 @@ collections:
     - name: ansible.controller
       version: 4.5.11
     - name: azure.azcollection
+      version: 3.0.0
   #  - name: community.general
   #    version:  9.1.0
    # - name: community.aws

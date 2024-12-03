@@ -1,0 +1,30 @@
+- name: Add users to Azure Entra group for Virtual Desktop Access
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.9
+  #connection: local
+  tasks:
+    - name: Ensure group exists
+      azure.azcollection.azure_rm_adgroup:
+        object_id: "{{ group_object_id }}"  # The object ID of the Azure AD group
+        state: present
+      register: ad_group
+
+    - name: Check if users exist in Azure AD
+      azure.azcollection.azure_rm_aduser:
+        user_principal_name: "{{ user_upn }}"
+      register: user_check
+      ignore_errors: true
+
+    - name: Add users to group if they exist
+      azure.azcollection.azure_rm_adgroup:
+        object_id: "{{ ad_group.object_id }}"
+        present_members:
+          - "{{ item.user_principal_name }}"
+        state: present
+      loop: "{{ user_check.results | selectattr('user_principal_name', 'defined') | map(attribute='user_principal_name') | list }}"
+      when: item is defined and item.user_principal_name is not none
+
+    - name: Display result of user addition
+      debug:
+        var: user_check

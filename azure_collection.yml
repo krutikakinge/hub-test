@@ -1,7 +1,10 @@
 - name: Add users to Azure Entra group for Virtual Desktop Access
   hosts: localhost
   vars:
-    ansible_python_interpreter: /usr/bin/python3.9
+    ansible_python_interpreter: /usr/libexec/platform-python
+    group_object_id: test
+    user_upn: test1
+    ad_group.object_id: test2
   #connection: local
   tasks:
     - name: Ensure group exists

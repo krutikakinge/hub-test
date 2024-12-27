@@ -1,16 +1,13 @@
 - name: hpe server component level playbook
   hosts: localhost
   gather_facts: no
-    
-​
   roles:
-    - role: set_secure_boot
+    - role: hpe.ilo.set_secure_boot
       vars:
         baseuri: "{{ ilo_address }}"
         username: "{{ ilo_username }}"
         password: "{{ ilo_password }}"
-        secure_boot_enable: True 
-        
+        secure_boot_enable: True       
   tasks:
     - name: Enable secure boot
       ansible.builtin.debug:

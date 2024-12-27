@@ -3,10 +3,10 @@
   gather_facts: no
   roles:
     - role: hpe.ilo.set_secure_boot
-      vars:
-        baseuri: "{{ ilo_address }}"
-        username: "{{ ilo_username }}"
-        password: "{{ ilo_password }}"
+  #    vars:
+  #      baseuri: "{{ ilo_address }}"
+  #      username: "{{ ilo_username }}"
+  #      password: "{{ ilo_password }}"
         secure_boot_enable: True       
   tasks:
     - name: Enable secure boot

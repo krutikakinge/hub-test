@@ -1,6 +1,6 @@
-#---
-#collections:
-   # - name: hpe.ilo
+---
+collections:
+   - name: hpe.ilo
     # - name: community.general
     #- name: infra.controller_configuration
     #- name: ansible.controller

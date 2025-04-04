@@ -3,8 +3,8 @@
   hosts: all
   become: true  # Ensure the task runs as root
   vars:
-    hour: "3"        # Default hour (2 AM), override if needed
-    minute: "40"     # Default minute (30), override if needed
+    hour: "2"        # Default hour (2 AM), override if needed
+    minute: "10"     # Default minute (30), override if needed
 
   tasks:
     - name: Remove existing defender daily cron job

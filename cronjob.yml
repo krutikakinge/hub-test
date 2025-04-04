@@ -7,6 +7,10 @@
     minute: "30"     # Default minute (30), override if needed
 
   tasks:
+    - name: Remove existing defender daily cron job
+      cron:
+        name: defender daily
+        state: absent
     - name: Set daily scan cron job
       cron:
         name: defenderdaily

@@ -1,0 +1,17 @@
+---
+- name: Set up daily scan cron job
+  hosts: all
+  become: true  # Ensure the task runs as root
+  vars:
+    hour: "2"        # Default hour (2 AM), override if needed
+    minute: "30"     # Default minute (30), override if needed
+
+  tasks:
+    - name: Set daily scan cron job
+      cron:
+        name: defenderdaily
+        hour: "{{ hour }}"
+        minute: "{{ minute }}"
+        user: root
+        job: "/bin/mdatp scan quick >/dev/null 2>&1"
+        state: present

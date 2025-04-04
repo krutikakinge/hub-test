@@ -13,7 +13,7 @@
         state: absent
     - name: Set daily scan cron job
       cron:
-        name: defenderdaily
+        name: defender daily
         hour: "{{ hour }}"
         minute: "{{ minute }}"
         user: root

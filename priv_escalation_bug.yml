@@ -1,0 +1,5 @@
+---
+- name: test play
+  hosts: localhost
+  roles:
+    - cic.system.priv_escalation_bug

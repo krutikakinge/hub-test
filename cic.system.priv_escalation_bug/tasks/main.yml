@@ -3,10 +3,9 @@
   ansible.builtin.set_fact:
     hostlist:
       - hostname:
-        - sbsb-vlsd-dev-01.bs.cial.ch
-        - sbsb-vlsd-dev-02.bs.cial.ch
+        - dhcp230-14.awxlab.pnq2.redhat.com
       - hostname:
-        - sbsb-vlsd-iam-01.bs.cial.ch
+        - dhcp230-14.awxlab.pnq2.redhat.com
 
 - name: outer loop
   ansible.builtin.include_tasks: inner_task.yml

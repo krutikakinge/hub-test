@@ -1,0 +1,10 @@
+---
+- name: debug information about current user
+  become: true
+  become_user: root
+  ansible.builtin.shell: |
+    id -a
+  delegate_to: "{{ delegate_host }}"
+  loop: "{{ item.hostname }}"
+  loop_control:
+    loop_var: delegate_host

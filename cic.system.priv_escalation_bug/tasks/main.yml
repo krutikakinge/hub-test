@@ -1,0 +1,13 @@
+---
+- name: construct data structure
+  ansible.builtin.set_fact:
+    hostlist:
+      - hostname:
+        - sbsb-vlsd-dev-01.bs.cial.ch
+        - sbsb-vlsd-dev-02.bs.cial.ch
+      - hostname:
+        - sbsb-vlsd-iam-01.bs.cial.ch
+
+- name: outer loop
+  ansible.builtin.include_tasks: inner_task.yml
+  loop: "{{ hostlist | list }}"

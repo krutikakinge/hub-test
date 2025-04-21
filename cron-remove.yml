@@ -1,0 +1,9 @@
+---
+- name: Set up daily scan cron job
+  hosts: all
+  become: true  # Ensure the task runs as root
+  tasks:
+    - name: Remove existing defender daily cron job
+      cron:
+        name: defender daily
+        state: absent

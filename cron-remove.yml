@@ -7,8 +7,11 @@
       cron:
         name: defender daily
         state: absent
-   - name: Debug current cron jobs
-     command: crontab -l
-     register: cron_output
-   - debug:
-     var: cron_output.stdout_line
+    - name: Debug current cron jobs
+      command: crontab -l
+      register: cron_output
+      ignore_errors: true  # Optional: in case crontab is empty
+
+    - name: Show crontab output
+      debug:
+        var: cron_output.stdout_lines

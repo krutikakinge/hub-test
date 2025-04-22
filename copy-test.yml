@@ -6,5 +6,5 @@
   tasks:
     - name: copy third party agent folder
       copy:
-        src: /home/ansible/thirdparty_agents
-        dest: /root
+        src: /home/ansible/thirdparty_agents/test
+        dest: /root/test

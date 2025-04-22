@@ -1,17 +1,10 @@
 ---
- - name: upgrade splunk agent
-   hosts: all 
-   become: true 
-   tasks:
-      - name: register a system to satellite using ansible module
-        redhat subscription:
-              state: present
-              activationkey: Library
-              pool: 8ae880e475ff6e390176184bb56b0222
-              org_id: TSYS
-              force_register: true
-        ignore_errors: true
-      - name: copy third party agent folder 
-        copy:
-              src: /home/ansible/thirdparty_agents
-              dest: /root
+- name: upgrade splunk agent
+  hosts: all
+  become: true
+
+  tasks:
+    - name: copy third party agent folder
+      copy:
+        src: /home/ansible/thirdparty_agents
+        dest: /root

@@ -1,0 +1,17 @@
+- name: Example playbook
+  hosts: Website_all
+  vars_files:
+    - abc.yml
+  tasks:
+    - name: Task on node1
+      debug:
+        msg: "Running on node1"
+
+    - name: Task2 on node1
+      debug:
+        msg: "{{ vars[inventory_hostname] }}"
+
+    - name: Task on node2 via delegation
+      debug:
+        msg: "Running on node2"
+      delegate_to: "{{ msg.node2 }}"

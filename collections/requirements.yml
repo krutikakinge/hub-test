@@ -1,9 +1,9 @@
 ---
 collections:
-   - name: hpe.ilo
+ - name: ansible.controller
+  # - name: hpe.ilo
     # - name: community.general
     #- name: infra.controller_configuration
-    - name: ansible.controller
    #   version: 4.5.11
   #  - name: azure.azcollection
  #     version: 3.0.0
@@ -18,7 +18,7 @@ collections:
   #    version: 1.4.7
    # - name: ansible.galaxy_collection
     #  version: 1.0.13
-   - name: ansible.receptor
+   # - name: ansible.receptor
  #     version: 2.0.3
   #  - name: ansible.scm
   #    version: 2.0.0

@@ -3,6 +3,8 @@ collections:
  - name: ansible.controller
  - name: ansible.eda
  - name: ansible.receptor
+ - name: microsoft.ad
+ - name: test.fail
   # - name: hpe.ilo
     # - name: community.general
     #- name: infra.controller_configuration
